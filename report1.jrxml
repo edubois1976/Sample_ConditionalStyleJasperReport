@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="297" pageHeight="421" columnWidth="257" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{parameter1}!=null && $P{parameter1}.length()>=10]]></conditionExpression>
+			<style forecolor="#000000" fontSize="11"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{parameter1}!=null && $P{parameter1}.length()<10]]></conditionExpression>
+			<style forecolor="#000000" fontSize="24"/>
+		</conditionalStyle>
+	</style>
+	<style name="style2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{parameter1}!=null && $P{parameter1}.length()>=10]]></conditionExpression>
+			<style forecolor="#000000" fontSize="9" isBold="false" isItalic="false"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{parameter1}!=null && $P{parameter1}.length()<10]]></conditionExpression>
+			<style forecolor="#000000" fontSize="11" isBold="false" isItalic="false"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<parameter name="parameter2" class="java.lang.String"/>
+	<parameter name="parameter3" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement style="style1" stretchType="RelativeToBandHeight" x="0" y="0" width="257" height="35">
+					<printWhenExpression><![CDATA[true]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{parameter1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" x="0" y="35" width="257" height="30"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{parameter2}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="0" y="65" width="257" height="43" forecolor="#FFFFFF" backcolor="#000000"/>
+				<jr:Interleaved2Of5 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$P{parameter3}]]></jr:codeExpression>
+				</jr:Interleaved2Of5>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>
