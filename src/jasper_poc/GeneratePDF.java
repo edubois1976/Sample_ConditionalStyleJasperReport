@@ -19,7 +19,8 @@ public class GeneratePDF {
     public static void main(String[] args) {
         try {
             // - Chargement et compilation du rapport
-            JasperDesign jasperDesign = JRXmlLoader.load("D:\\tmp\\jasper\\jasper_poc\\report1.jrxml");
+            JasperDesign jasperDesign = JRXmlLoader
+                    .load("D:\\IDE\\user\\workspaceTCPMET181\\Sample_ConditionalStyleJasperReport\\report1.jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
 
             // - Paramètres à envoyer au rapport
@@ -27,6 +28,7 @@ public class GeneratePDF {
             parameters.put("parameter1", "Olives");
             parameters.put("parameter2", "à la méditerranéenne");
             parameters.put("parameter3", "0123456789123");
+            parameters.put("parameter4", "*0123456789123*");
 
             JRDataSource jrDataSource = new JREmptyDataSource(1);
 
@@ -34,7 +36,8 @@ public class GeneratePDF {
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, jrDataSource);
 
             // - Création du rapport au format PDF
-            JasperExportManager.exportReportToPdfFile(jasperPrint, "D:\\tmp\\jasper\\jasper_poc\\sample.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint,
+                    "D:\\IDE\\user\\workspaceTCPMET181\\Sample_ConditionalStyleJasperReport\\sample.pdf");
 
             System.out.println("PDF done");
         } catch (JRException e) {
