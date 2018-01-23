@@ -26,11 +26,12 @@
 	<parameter name="parameter1" class="java.lang.String"/>
 	<parameter name="parameter2" class="java.lang.String"/>
 	<parameter name="parameter3" class="java.lang.String"/>
+	<parameter name="parameter4" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="143" splitType="Stretch">
 			<textField>
 				<reportElement style="style1" stretchType="RelativeToBandHeight" x="0" y="0" width="257" height="35">
 					<printWhenExpression><![CDATA[true]]></printWhenExpression>
@@ -44,11 +45,23 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$P{parameter2}]]></textFieldExpression>
 			</textField>
 			<componentElement>
-				<reportElement x="0" y="65" width="257" height="43" forecolor="#FFFFFF" backcolor="#000000"/>
-				<jr:Interleaved2Of5 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+				<reportElement mode="Opaque" x="0" y="65" width="95" height="43" forecolor="#FFFFFF" backcolor="#000000"/>
+				<jr:Interleaved2Of5 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" evaluationTime="Band" textPosition="none">
 					<jr:codeExpression><![CDATA[$P{parameter3}]]></jr:codeExpression>
 				</jr:Interleaved2Of5>
 			</componentElement>
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="166" y="108" width="75" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Free 3 of 9" size="16"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{parameter4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="123" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{parameter4}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>
