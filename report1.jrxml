@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="297" pageHeight="421" columnWidth="257" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<style name="style1">
@@ -32,6 +32,9 @@
 	</queryString>
 	<detail>
 		<band height="143" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="142" y="65" width="107" height="63" forecolor="#FFFFFF" backcolor="#000000"/>
+			</frame>
 			<textField>
 				<reportElement style="style1" stretchType="RelativeToBandHeight" x="0" y="0" width="257" height="35">
 					<printWhenExpression><![CDATA[true]]></printWhenExpression>
@@ -45,20 +48,20 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$P{parameter2}]]></textFieldExpression>
 			</textField>
 			<componentElement>
-				<reportElement mode="Opaque" x="0" y="65" width="95" height="43" forecolor="#FFFFFF" backcolor="#000000"/>
+				<reportElement mode="Transparent" x="0" y="65" width="95" height="43" forecolor="#FFFFFF" backcolor="#000000"/>
 				<jr:Interleaved2Of5 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" evaluationTime="Band" textPosition="none">
 					<jr:codeExpression><![CDATA[$P{parameter3}]]></jr:codeExpression>
 				</jr:Interleaved2Of5>
 			</componentElement>
 			<textField>
-				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="166" y="108" width="75" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
-				<textElement>
-					<font fontName="Free 3 of 9" size="16"/>
+				<reportElement mode="Transparent" x="158" y="91" width="77" height="3" forecolor="#FFFFFF" backcolor="#000000"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Free 3 of 9" size="16" isUnderline="false" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$P{parameter4}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="123" width="100" height="20"/>
+				<reportElement x="158" y="108" width="100" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
 				<textElement/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$P{parameter4}]]></textFieldExpression>
 			</textField>
